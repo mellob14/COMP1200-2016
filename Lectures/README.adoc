@@ -872,3 +872,14 @@ state (ROM address),next,1,2,ROM data
 image:http://lawrancej.github.io/COMP1200-2016/Lectures/random-state-machine.svg[Random state machine]
 
 https://docs.google.com/spreadsheets/d/1k3oJ2vz-r8oahjXeXzSUPlxBUk9rlUNBdR2-pGXjyP8/edit?usp=sharing[Spreadsheet] for the state machine above.
+
+== February 1: CPU overview
+
+RAM (Random Access Memory):: The location of programs and/or data.
+ALU (Arithmetic/Logic Unit):: Given two inputs, produce one output based on the opcode
+Register file:: A small array of registers to read/write.
+Control unit:: The underlying state machine that directs traffic among the ALU, register file, and RAM.
+
+https://github.com/lawrancej/COMP1200-2016/blob/master/Circuits/cpu-16bit-isa.adoc[CPU instruction set]
+
+== February 3: Programming the CPU
