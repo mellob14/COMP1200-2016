@@ -5,6 +5,7 @@ Midterm is on February 11.
 == Resources
 
 * http://sourceforge.net/projects/circuit/files/latest/download[Download Logisim]
+* https://github.com/lawrancej/COMP1200-2016/blob/master/Circuits/cpu-16bit-isa.adoc[CPU instruction set]
 
 NOTE: For the folks on Mac, open Terminal (Applications -> Utilities -> Terminal)
 
