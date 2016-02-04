@@ -119,3 +119,26 @@ state,input,next,vend,return
 |===
 
 https://github.com/lawrancej/COMP1200-2016/blob/master/Git.adoc[How to submit work]
+
+== Lab 4: Machine language programming
+
+It's like CS1, all over again.
+
+Write out source code for a function that computes the maximum of two numbers.
+Yes, I know practically every language has a `max(a,b)` function,
+but I want you to write your own version for the https://github.com/lawrancej/COMP1200-2016/blob/master/Circuits/cpu-16bit-isa.adoc[CPU I supplied].
+
+----
+int a = RAM[0x80]
+int b = RAM[0x81]
+int max = a;
+if (b > a) {
+    max = b;
+}
+----
+
+1. Write out the equivalent assembly code for source code.
+One stipulation: the two numbers should be loaded from RAM.
+2. Write out equivalent machine code, and test it in Logisim,
+using the supplied CPU in `Circuits/cpu-16bit.circ`.
+3. Save the contents of RAM as lab4.txt.
