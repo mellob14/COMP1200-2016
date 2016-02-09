@@ -942,6 +942,7 @@ Although the example CPU is limited, it is as capable as any other CPU.
 
 . The instruction set (like most CPUs) requires data to reside in registers, including constants.
 That is why we must load 1 into a register first: high-level constructs (such as increment) assume the literal 1.
+It is also why we systematically replace meaningful variable names with registers.
 . Assume that memory address `0x80` has the number we'll use to compute factorial.
 `LOAD` is distinct from `MOV`, because `LOAD` copies data from RAM into a register, whereas `MOV` copies data from the instruction into the register.
 . In this CPU (as in the ARM architecture), register 0 is a constant 0.
