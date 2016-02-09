@@ -883,3 +883,57 @@ Control unit:: The underlying state machine that directs traffic among the ALU, 
 https://github.com/lawrancej/COMP1200-2016/blob/master/Circuits/cpu-16bit-isa.adoc[CPU instruction set]
 
 == February 3: Programming the CPU
+
+An implementation of factorial.
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+|*Line*
+|*Structured code*
+|*Spaghetti code*
+|*Assembly*
+|*Machine*
+
+|0
+|
+|`int R1 = 0x01;`
+|`MOV R1,0x01`
+|7101
+
+|1
+|`int n = RAM[0x80];`
+|`int R2 = RAM[0x80];`
+|`LOAD R2,0x80`
+|c280
+
+|2
+|`int factorial = 1;`
+|`int R3 = R1+R0;`
+|`ADD R3,R1,R0`
+|0310
+
+|3
+|`while (n > 0) {`
+|`if (R2==0) goto 0x07;`
+|`JZE R2,0x07`
+|8207
+
+|4
+|`factorial *= n;`
+|`R3=R3*R2;`
+|`MUL R3,R3,R2`
+|2332
+
+|5
+|`n--;`
+|`R2=R2-1;`
+|`SUB R2,R2,R1`
+|1221
+
+|6
+|`}`
+|`if (R0==0) goto 0x03;`
+|`JZE R0, 0x03`
+|8003
+
+|===

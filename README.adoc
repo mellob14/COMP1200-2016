@@ -31,3 +31,8 @@ January 25:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[St
 January 27:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[State machine example]
 January 28:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 3: State machine implementation]
 January 29:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[More state machines].
+February 1:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[CPU walkthrough].
+February 3:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Programming the CPU]
+February 4:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 4: Machine language programming]
+February 5:: Class canceled
+February 8:: Class canceled
