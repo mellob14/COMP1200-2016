@@ -36,3 +36,4 @@ February 3:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Pr
 February 4:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 4: Machine language programming]
 February 5:: Class canceled
 February 8:: Class canceled
+February 10:: https://github.com/lawrancej/COMP1200-2016/blob/master/Exams/[Midterm practice]
