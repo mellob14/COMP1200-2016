@@ -953,7 +953,21 @@ Jumping to the next instruction achieves nothing, because the CPU will advance t
 Thus, we must invert the condition to achieve the effect of the structured code.
 . When we reach the end of the loop, we jump back to the beginning.
 
-== February 12: About your machine
+== February 12: Memory hierarchy, displays
 
+Memory speed and capacity are at odds with each other: fast CPU registers hold bytes, whereas slow hard drives hold terabytes.
+
+* http://blog.codinghorror.com/the-infinite-space-between-words/[Memory hierarchy]
+* https://www.google.com/search?q=a+light+nanosecond&ie=utf-8&oe=utf-8#q=+%28lightyear+%2F+1+year%29+in+feet+per+second[Light travels roughly 1 foot per nanosecond]
+* https://en.wikipedia.org/wiki/Kibibyte[Know your SI prefixes for information]
 * https://www.youtube.com/watch?v=Wiy_eHdj8kg[Hard drive teardown]
+
+Displays are amazing.
+
 * https://www.youtube.com/watch?v=jiejNAUwcQ8[LCD teardown]
+
+High dynamic range displays are amazing-er (and are coming on the market soon)
+
+* https://en.wikipedia.org/wiki/High-dynamic-range_imaging[HDR imaging]
+* http://www.bit-tech.net/hardware/2005/10/04/brightside_hdr_edr/8[Two displays, side by side. Both are showing black. Spot the difference?]
+* http://www.cnet.com/news/what-is-hdr-for-tvs-and-why-should-you-care/[High dynamic range displays]
