@@ -37,3 +37,5 @@ February 4:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 4:
 February 5:: Class canceled
 February 8:: Class canceled
 February 10:: https://github.com/lawrancej/COMP1200-2016/blob/master/Exams/[Midterm practice]
+February 11:: Midterm
+February 12:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[About your machine]

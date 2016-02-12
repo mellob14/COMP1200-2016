@@ -952,3 +952,8 @@ Spaghetti code (and machine code) is less readable because if the condition is t
 Jumping to the next instruction achieves nothing, because the CPU will advance to the next instruction regardless.
 Thus, we must invert the condition to achieve the effect of the structured code.
 . When we reach the end of the loop, we jump back to the beginning.
+
+== February 12: About your machine
+
+* https://www.youtube.com/watch?v=Wiy_eHdj8kg[Hard drive teardown]
+* https://www.youtube.com/watch?v=jiejNAUwcQ8[LCD teardown]
