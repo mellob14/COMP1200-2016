@@ -198,4 +198,6 @@ ROM address,Op3,Op2,Op1,Cycle,Clock,,Reg write,ALU enable,Bus read,Bus write
 31,1,1,1,1,1,,,,,
 |===
 
-Save your work in a spreadsheet and commit as usual.
+Save your work in a spreadsheet (and save the new Logisim CPU) and commit and push as usual.
+
+https://github.com/lawrancej/COMP1200-2016/blob/master/Git.adoc[How to submit work]
