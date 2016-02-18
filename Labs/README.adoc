@@ -163,7 +163,7 @@ If not, you goofed up.
 
 [format="csv",options="header"]
 |===
-ROM address,Op3,Op2,Op1,Clock,Cycle,,Reg write,ALU enable,Bus read,Bus write
+ROM address,Op3,Op2,Op1,Cycle,Clock,,Reg write,ALU enable,Bus read,Bus write
 0,0,0,0,0,0,,,,,
 1,0,0,0,0,1,,,,,
 2,0,0,0,1,0,,,,,
