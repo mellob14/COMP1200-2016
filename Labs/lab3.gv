@@ -1,0 +1,24 @@
+# dot lab3.gv -T svg > lab3.svg
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle]; "0 cents";
+	node [shape = none]; " ";
+	node [shape = circle];
+	" " -> "0 cents";
+	"0 cents" -> "5 cents" [ label = "nickel" ];
+  "0 cents" -> "10 cents" [ label = "dime" ];
+	"0 cents" -> "0 cents" [ label = "quarter / vend" ];
+	"5 cents" -> "10 cents" [ label = "nickel" ];
+  "5 cents" -> "15 cents" [ label = "dime" ];
+	"5 cents" -> "0 cents" [ label = "quarter / vend, return 5 cents" ];
+	"10 cents" -> "15 cents" [ label = "nickel" ];
+  "10 cents" -> "20 cents" [ label = "dime" ];
+	"10 cents" -> "0 cents" [ label = "quarter / vend, return 10 cents" ];
+	"15 cents" -> "20 cents" [ label = "nickel" ];
+  "15 cents" -> "0 cents" [ label = "dime / vend" ];
+	"15 cents" -> "0 cents" [ label = "quarter / vend, return 15 cents" ];
+	"20 cents" -> "0 cents" [ label = "nickel / vend" ];
+  "20 cents" -> "0 cents" [ label = "dime / vend, return 5 cents" ];
+	"20 cents" -> "0 cents" [ label = "quarter / vend, return 20 cents" ];
+}

@@ -1,0 +1,411 @@
+= Git Guide
+
+In a way, Git is like Dropbox or Google Drive,
+but its flexibility introduces complexity.
+Hence this guide.
+Git is available in the command line, as a standalone graphical interface, and is integrated in development tools such as Eclipse and Visual Studio.
+
+== Installation
+
+http://git-scm.com/download/[Download Git] for your platform.
+
+[horizontal]
+*Windows*:: Stick with the default options and click `Next` until finished.
+*Mac OS X*:: Got an error? Try:
+* Apple menu -> System Preferences... -> Security & Privacy -> Open Anyway.
+* Otherwise, try: Spotlight Search (press `F4`) -> Terminal. Then, type `git` and follow instructions to install git.
+*Linux*:: Use `sudo` with your package manager.
+
+== Setup
+
+Starterupper configures git for this class.
+It is safe to run if you already use git.
+
+First, open your terminal.
+
+****
+[horizontal]
+*Windows*:: Windows key -> Git Bash
+*Mac OS X*:: Spotlight Search (Press `F4`) -> Terminal
+****
+
+Then, copy/paste the entire command below into the terminal.
+
+----
+curl https://raw.githubusercontent.com/lawrancej/COMP1200-2016/master/main.sh | bash
+----
+
+[horizontal]
+*Windows*:: `Ctrl-C` to copy, `Shift-Insert` to paste.
+
+*Mac*:: `Command-C` to copy, `Command-V` to paste
+
+== Git GUI usage
+
+First, open Git GUI.
+
+****
+*Windows*: Windows key -> Git GUI
+
+*Mac OS X*:
+
+Spotlight Search (Press `F4`) -> Terminal
+
+----
+git gui
+----
+****
+
+Next, go to the repository for this course.
+
+. Open Existing Repository.
+. Click Browse
+. Choose `COMP1200-2016` in your home directory.
+. Click Open
+
+[TIP]
+====
+To get back again to this repository easily,
+
+Click Repository -> Create Desktop Icon
+====
+
+[cols="1a,3a"]
+|===
+|*To...*
+|*... follow these steps:*
+
+|*Submit work*
+
+. Work
+. Stage
+. Commit
+. Push
+|*Work* within the course repository, or copy files into it.
+
+*Stage* your work by selecting files to add to the commit (snapshot).
+
+. Look for files listed under _Unstaged Changes_ (upper left panel) to stage.
+. Click the file name to examine changes in the upper right panel.
+. Click the icon to the left of the file you want to add.
+. Notice that the file is now listed under _Staged Changes_ (lower left panel).
+
+*Commit* to record a snapshot of the files you staged.
+
+. Enter a description of what you did in the _Commit Message_ (lower right panel), such as `Finished lab 1`
+. Click Commit
+
+*Push* to upload commits to your remote repository.
+
+. Click Push.
+
+|*Confirm submission*
+
+. Show history
+. Locate `origin/master`
+|*Show history* of commits.
+
+. Click Repository -> Visualize All Branch History
+
+*Locate `origin/master`* in the commit history to see when you last submitted work.
+If it's at the top, you pushed successfully.
+If it's missing (or not at the top), I don't have your latest changes, and you need to push.
+
+|*Receive updates*
+
+. Fetch
+. Merge
+. Check
+|*Fetch* to download updates from me.
+
+. Click Remote -> Fetch from -> All
+. Click OK
+
+*Merge* `upstream/master` to combine my updates with your work.
+
+. Click Merge -> Local Merge...
+. Click Tracking Branch
+. Select `upstream/master` in the list.
+. Click Merge
+
+*Check* for errors to see if you need to fix anything.
+
+Git GUI may complain that you are in the middle of a change.
+Indeed, you should complete the current commit before starting a merge.
+Stage and commit the file(s) and try to merge again.
+
+Git GUI may warn about merge conflicts.
+This means that we both made different changes to the same lines in _conflicting_ files.
+
+To fix the merge conflict, follow the instructions described in the command line section.
+|===
+
+== Command line usage
+
+First, open your terminal.
+
+****
+[horizontal]
+*Windows*:: Windows key -> Git Bash
+*Mac OS X*:: Spotlight Search (Press `F4`) -> Terminal
+****
+
+Next, go to the course repository.
+
+----
+cd ~/COMP1200-2016
+----
+
+[cols="1a,3a"]
+|===
+|*To...*
+|*... follow these steps:*
+|*Examine*
+
+. Staging area
+. Diffs
+
+|*Examine the staging area* to get an overview of changes.
+
+----
+git status
+----
+
+The command above organizes changes into these categories:
+
+*Changes to be committed*::
+These _staged_ files will be part of the next snapshot or commit.
+*Changes not staged for commit*::
+These _tracked_ files have changed, but will not be part of the next snapshot or commit until you _stage_ (add) them.
+*Untracked files*::
+These files are in the working directory, but are not in the git repository, because you did not _stage_ (add) them to git yet.
+
+*Examine diffs* to see _unstaged changes_ to files that git tracks:
+
+----
+git diff
+----
+
+To understand the output:
+
+----
+ This line is unchanged.
+-This line is removed, and shown in red.
++This line is added, and shown in green.
+----
+
+|*Submit work*
+
+. Work
+. Stage
+. Commit
+. Push
+|*Work* by saving or copying files inside the course repository.
+
+*Stage* your work by selecting files to add to the next commit (snapshot).
+Git _tracks changes_ to the files you stage.
+
+****
+To stage all files currently in the folder...
+
+----
+git add .
+----
+
+To stage `an_arbitrary_file`
+
+----
+git add an_arbitrary_file
+----
+****
+
+*Commit* to record a snapshot of the files staged earlier, and describe what you did.
+
+----
+git commit -m "Finished lab 1"
+----
+
+[TIP]
+====
+You can stage and commit tracked files in one step:
+
+----
+git commit -am "Finished lab 1"
+----
+====
+
+*Push* to upload commits to your remote repository.
+
+----
+git push origin master
+----
+
+|*Confirm submission*
+
+. Show history
+. Locate `origin/master`
+|*Show history* of commits.
+
+----
+gitk --all &
+----
+
+*Locate `origin/master`* in the commit history to see when you last submitted work.
+If it's at the top, you pushed successfully.
+If it's missing (or not at the top), I don't have your latest changes, and you need to push.
+
+|*Receive updates*
+
+. Fetch
+. Merge
+. Check
+
+|*Fetch* to download updates from me.
+
+----
+git fetch --all
+----
+
+*Merge* `upstream/master` to combine my updates with your work.
+
+----
+git merge upstream/master
+----
+
+[TIP]
+====
+To fetch and merge in one step:
+----
+git pull upstream master
+----
+====
+
+*Check* the output for `errors` to see if you need fix anything.
+
+Git may complain that a file `would be overwritten by merge.`
+This means that you haven't _staged_ or _committed_ those file(s) yet,
+and git is preventing you from losing that work.
+Stage and commit the file(s), and try to merge again.
+
+Git may warn about a merge `CONFLICT`.
+This means that we both made different changes to the same lines in the _conflicting_ files.
+
+Examine all conflicting file(s).
+You will notice lines with `<<<<<<<` or `=======` or `>>>>>>>` that weren't there before.
+These _merge conflict markers_ show where (and how) changes created conflict.
+Although you may remove them manually, git has options to assist you.
+
+If you want to keep your version of a `conflicting_file`
+
+----
+git checkout --ours conflicting_file
+----
+
+If you want to use my version of a `conflicting_file`
+
+----
+git checkout --theirs conflicting_file
+----
+
+If you want to mix and match changes, use a merge tool (installed separately).
+
+----
+git mergetool conflicting_file
+----
+
+Finally, to fix the merge conflict, stage and commit all conflicting files (after you've fixed them).
+
+|===
+
+== Eclipse usage
+
+Open Eclipse.
+
+*Import* the class project into Eclipse, if you haven't done so.
+
+. Click File -> Import...
+. General -> Existing Projects into Workspace...
+. Click Next
+. Click Browse...
+. Navigate to your home directory -> COMP1200-2016
+. Click Open. You should see at least one project.
+. Click Finish
+
+[cols="1a,3a"]
+|===
+|*To...*
+|*... follow these steps:*
+
+|*Submit work*
+
+. Work
+. Stage
+. Commit
+. Push
+
+|*Work* within the class project or copy into it.
+
+. In the Package Explorer, right click on the class project
+. Team -> Commit...
+. Enter a message (such as `Lab 1 done`)
+. *Stage* by selecting files to add to the commit (snapshot).
+. Click *Commit* and *Push*
+
+|*Confirm submission*
+
+. Show history
+. Locate `origin/master`
+
+| *Show history* of commits.
+
+. In the Package Explorer, right click on the class project
+. Team -> Show in History
+
+*Locate* `origin/master` in the commit history to see when you last submitted work.
+If it's at the top, you pushed successfully.
+If it's missing (or not at the top), I don't have your latest changes, and you need to push.
+
+|*Receive updates*
+
+. Fetch
+. Merge
+. Check
+
+|*Fetch* to download updates from me.
+
+. In the Package Explorer, right click on the class project
+. Team -> Remote -> Fetch from...
+. Select `upstream`
+. Click Finish
+
+*Merge* `upstream/master` to combine my updates with your work.
+
+. In the Package Explorer, right click on the class project
+. Team -> Merge...
+. Select `upstream/master` (Under Remote Tracking)
+. Click Merge
+
+*Check* for errors to see if you need to fix anything.
+
+Eclipse may complain that a file `would be overwritten by a merge`.
+This means that you haven't _staged_ or _committed_ those file(s) yet,
+and Eclipse is preventing you from losing that work.
+Stage and commit the file(s), and try to merge again.
+
+Eclipse may warn about merge conflicts.
+This means that we both made different changes to the same lines in _conflicting_ files.
+Eclipse shows a red icon next to _conflicting_ files.
+
+Examine all conflicting file(s).
+You will notice lines with `<<<<<<<` or `=======` or `>>>>>>>` that weren’t there before.
+These _merge conflict markers_ show where (and how) changes created conflict.
+Although you may remove them manually, Eclipse has a merge tool to assist you.
+
+To fix merge conflicts:
+
+. In the Package Explorer, right click on the class project
+. Team -> Merge Tool
+
+Finally, to fix the merge conflict, stage and commit all conflicting files (after you've fixed them).
+
+|===

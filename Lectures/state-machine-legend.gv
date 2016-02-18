@@ -1,0 +1,16 @@
+# dot state-machine-legend.gv -T svg > state-machine-legend.svg
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle]; "final";
+	node [shape = none]; " ";
+	node [shape = circle];
+  A -> B [ label = "input / output" ];
+  X -> Y [ label = "input" ];
+  " " -> "start";
+  "state";
+  A [label="from"];
+  B [label="to"];
+  X [label="from"];
+  Y [label="to"];
+}

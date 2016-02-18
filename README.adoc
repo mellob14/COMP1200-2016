@@ -1,18 +1,44 @@
 = COMP1200: Computer Organization
 
-== January 6
+Midterm is on February 11.
 
-https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Introduce yourself, About this course]
+== Resources
 
-== January 7
+* http://sourceforge.net/projects/circuit/files/latest/download[Download Logisim]
+* https://github.com/lawrancej/COMP1200-2016/blob/master/Circuits/cpu-16bit-isa.adoc[CPU instruction set]
 
-https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Number bases, conversions]
+NOTE: For the folks on Mac, open Terminal (Applications -> Utilities -> Terminal)
 
-== January 8
+----
+cd ~/Downloads
+java -jar Logisim.app/Contents/Resources/Java/logisim.jar
+----
 
-https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 0: Setup Git]
+== Agenda
 
-== January 11
-
-https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Logic expressions, truth tables]
-
+[horizontal]
+January 6:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Introduce yourself, About this course]
+January 7:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Number bases, conversions]
+January 8:: https://github.com/lawrancej/COMP1200-2016/blob/master/Git.adoc[Lab 0: Setup git]
+January 11:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Logic expressions, truth tables]
+January 13:: Introduction to Logisim
+January 14:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 1: Discrete math review]
+January 15:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Boolean algebra, Gray codes, K-Maps]
+January 20:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Multiplexers and ROMs to implement combinational logic].
+January 21:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 2: Circuit implementation]
+January 22:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Sequential logic].
+January 25:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[State machines].
+January 27:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[State machine example]
+January 28:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 3: State machine implementation]
+January 29:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[More state machines].
+February 1:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[CPU walkthrough].
+February 3:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Programming the CPU]
+February 4:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 4: Machine language programming]
+February 5:: Class canceled
+February 8:: Class canceled
+February 10:: https://github.com/lawrancej/COMP1200-2016/blob/master/Exams/[Midterm practice]
+February 11:: Midterm
+February 12:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Memory hierarchy, displays]
+February 15:: President's day (observed)
+February 17:: Get midterms back.
+February 18:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 5: More Logic to ROM]

@@ -60,7 +60,7 @@ Binary works reliably everywhere.
 [format="csv", options="header"]
 |===
 Binary, Number,0,1
-Boolean,Value             , False          , True     
+Boolean,Value             , False          , True
 English,Word              , No             , Yes
 Switch, Position          , Off            , On
 CPU,    Voltage           , Low            , High
@@ -234,9 +234,9 @@ image:http://lawrancej.github.io/COMP278-2014/images/binary-hands.svg[Impress yo
 
 * 4. Hey!
 * 25.
-* 31. 
+* 31.
 * 48. All right. :-)
-* 1023. 
+* 1023.
 
 === Binary -> Octal (and back)
 
@@ -322,8 +322,8 @@ To negate a binary two's complement number, work from right to left:
 [format="csv", options="header"]
 |===
 Place  , -128 , 64  , 32  , 16  , 8   , 4   , 2   , 1
-Bits   , 0    , 0   , 0   , 1   , 1   , 0   , 1   , 0 
-Negated, 1    , 1   , 1   , 0   , 0   , 1   , 1   , 0 
+Bits   , 0    , 0   , 0   , 1   , 1   , 0   , 1   , 0
+Negated, 1    , 1   , 1   , 0   , 0   , 1   , 1   , 0
 |===
 
 The signed byte 0b00011010 is 16 + 8 + 2 = 26 in decimal.
@@ -394,9 +394,9 @@ Complete this truth table.
 [format="csv", options="header"]
 |===
 a   , b   , If a is true then b; if a is false then a.
-0   , 0   , 
-0   , 1   , 
-1   , 0   , 
+0   , 0   ,
+0   , 1   ,
+1   , 0   ,
 1   , 1   ,
 |===
 
@@ -456,13 +456,13 @@ a   , b   , a'  , (a * b)' , (a + b)' , (a &oplus; b)'
 Logic expressions borrow notation from algebra.
 Thus, AND as a * b, since it corresponds to multiplication on single bits.
 OR is almost addition: 0 + 1 = 1, but 1 + 1 = 2, not 1,
-which is why we read a + b as "a OR b", not "a plus b". 
+which is why we read a + b as "a OR b", not "a plus b".
 Buffer may seem pointless, but it can delay a signal in a circuit.
 
 === Order of operations
 
 Logic operators also borrow order of operations from algebra.
-Remember PEMDAS? In logic, it's PNAO. 
+Remember PEMDAS? In logic, it's PNAO.
 
 [format="csv", options="header"]
 |===
@@ -474,7 +474,7 @@ Order     , "OR, NOR, XOR, XNOR"  , OR is almost addition
 |===
 
 In logic expression a+b*c', we have three operations,
-and we evaluate NOT c first, then AND that with b, and finally OR with a. 
+and we evaluate NOT c first, then AND that with b, and finally OR with a.
 
 === Venn Diagrams
 
@@ -512,7 +512,7 @@ In Logisim, draw this expression as a circuit: x'+y*z
 
 ==== Right
 image:http://lawrancej.github.io/COMP278-2014/images/logicly-diagram-right.png[What you should see]
- 
+
 ==== **Wrong**
 image:http://lawrancej.github.io/COMP278-2014/images/logicly-diagram-wrong.png[What you shouldn't see]
 
@@ -544,3 +544,430 @@ Study this function table carefully in relation to the truth table above.
 We shrank down a truth table without losing information by noticing that a &oplus; b
 is the same as b if a is false, and a &oplus; b is the inverse of b if a is true.
 
+== January 13
+
+Boolean algebra is very similar to plain algebra, but some laws are unique to Boolean algebra.
+For example, the distributive law, has a form unique to Boolean algebra.
+
+[format="csv",output="header"]
+|===
+Law, Form, Dual form
+**Identity**, a * 1 = a                   , a + 0 = a
+**Commutative**    , a * b = b * a               , a + b = b + a
+**Associative**    , (a * b) * c = a * (b * c)   , (a + b) + c = a + (b + c)
+Identity           , a * 0 = 0                   , a + 1 = 1
+Distributive       , a * (b + c) = a * b + a * c , a + (b * c) = (a + b) * (a + c)
+Idempotence        , a * a = a                   , a + a = a
+Absorption         , a + a * b = a               , a * (a + b) = a
+Complement         , 0' = 1                      , 1' = 0
+Complement         , a * a' = 0                  , a + a' = 1
+Involution         , a'' = a                     , a'' = a
+DeMorgan's         , (a + b)' = a' * b'          , (a * b)' = a' + b'
+|===
+
+=== Dual forms
+
+All laws of Boolean algebra come in two forms, the law and its **dual form**.
+The dual form of any valid equation in Boolean algebra is also true.
+
+To find the dual form of a logic expression:
+
+. Evaluate the original expression and put parentheses around all subexpressions
+. Swap 1 with 0 (and vice versa)
+. Swap AND with OR (and vice versa)
+. Leave complements (NOT) alone
+
+Notice how the steps above convert the form of a law to its dual form?
+
+*Example*: Find the dual form of Z'+X*Y
+
+This is Z'*(X+Y).
+
+*Challenge*: Find the dual form of (a + b)' + c * a' + 1
+
+=== Simplification
+
+Apply the laws of Boolean algebra to an expression or equation to simplify/prove it.
+This is the sort of thing that's easier said than done, and practice will help.
+
+Hint: Work slowly and methodically: picture yourself working your way through a maze.
+Starting with the original expression, apply one law at a time until you arrive at the answer.
+At each step, you may choose many possible paths based on the laws you apply.
+
+*Example*: Show X*Y'*Z + X*Y*Z' + X*Y*Z = X*(Y+Z)
+
+[format="csv",output="header"]
+|===
+X*Y'*Z + X*Y*Z' + X*Y*Z = X*(Y+Z), Original expression
+X*(Y'*Z + Y*Z' + Y*Z) = X*(Y+Z), Distributive law
+X*(Z*(Y' + Y) + Y*Z') = X*(Y+Z), Distributive law
+X*(Z*(1) + Y*Z') = X*(Y+Z), Complements
+X*(Z + Y*Z') = X*(Y+Z), Identity
+X*(Z + Z*Y + Y*Z') = X*(Y+Z), Absorption
+X*(Z + Y*(Z + Z')) = X*(Y+Z), Distributive law
+X*(Z + Y*(1)) = X*(Y+Z), Complements
+X*(Z + Y) = X*(Y+Z), Identity
+X*(Y + Z) = X*(Y+Z), Commutative law
+|===
+
+*Challenge*: Show (a * b)' * (a' + b) * (b' + b) = a'
+
+== January 15
+
+=== Gray codes
+
+A Gray code (also known as a reflected binary code) is a way of encoding binary numbers so that every increment changes only a single bit.
+
+When we count in binary, we repeat 01 over and over again in the least significant place value.
+When we count in gray codes, we repeat 0110 over and over again in the rightmost bit.
+
+[format="csv",output="header"]
+|===
+Binary,Decimal,Gray code
+0000,0,0000
+0001,1,0001
+0010,0,0011
+0011,1,0010
+0100,0,0110
+0101,1,0111
+0110,0,0101
+0111,1,0100
+1000,0,1100
+1001,1,1101
+1010,0,1111
+1011,1,1110
+1100,0,1010
+1101,1,1011
+1110,0,1001
+1111,1,1000
+|===
+
+=== Binary -> Gray code
+
+. Shift the number to the right by one bit
+. Bitwise XOR the number and the original number
+
+In C, this is: `(num >> 1) ^ num`
+
+*Example*: What is the Gray code for 0b10110?
+
+----
+10110 num
+01011 num >> 1
+11101 bitwise XOR (Gray code)
+----
+
+What's the point?
+
+=== Karnaugh maps (K-Maps)
+
+Karnaugh maps:
+
+* are an alternate way of representing truth tables and function tables
+* layout a single output function and use the horizontal and vertical axes of a table for the values of the inputs
+* use Gray codes to ensure that related values go together spatially in the table
+* can help you find simple logic expressions
+
+http://www.ee.calpoly.edu/media/uploads/resources/KarnaughExplorer_1.html[Lets examine Karnaugh maps in action]
+
+== January 20
+
+=== Function tables
+
+Function tables are a way to compact down a truth table by removing variable(s) from the input columns and placing it into the output function.
+Function tables are so called because the outputs are no longer merely just 0 or 1, but also **any function** of input variables.
+
+=== Example
+
+Here's the truth table for a &oplus; b:
+
+[format="csv", options="header"]
+|===
+a   , b   , a &oplus; b
+0   , 0   , 0
+0   , 1   , 1
+1   , 0   , 1
+1   , 1   , 0
+|===
+
+We can condense this down to this function table, by freeing variable b:
+
+[format="csv", options="header"]
+|===
+a   , a &oplus; b
+0   , b
+1   , b'
+|===
+
+Notice how when a is false, the output function is the same as b.
+When a is true, the output function is the inverse of b.
+
+=== Multiplexers
+
+Multiplexers (MUX) are circuits that redirect one of several inputs to a single output based on the value of the selector.
+That is, the output corresponds to the selected input.
+
+In this respect, multiplexers are equivalent to switch/case statements.
+
+----
+boolean Four1MUX(byte selector, boolean input0, boolean input1, boolean input2, boolean input3) {
+    switch(selector) {
+        case 0: return input0;
+        case 1: return input1;
+        case 2: return input2;
+        case 3: return input3;
+    }
+    return false;
+}
+----
+
+The function table for a 4-1 MUX (4 input, 1 output multiplexer) is as follows:
+
+[format="csv", options="header"]
+|===
+S1,S0,Output
+0,0,Input0
+0,1,Input1
+1,0,Input2
+1,1,Input3
+|===
+
+Select bits S1 and S0 represent the most and least significant bits of S (respectively) in binary.
+
+=== Truth/function table to multiplexer
+
+To implement a combination logic function with a multiplexer, the number of rows (excluding the header) in the truth/function table must equal the number of inputs to the multiplexer.
+If your truth table has more rows than the multiplexer has inputs, write out a function table with the same number of inputs as the multiplexer equivalent to the truth table.
+
+. Align the outputs of your table to the inputs of the multiplexer.
+. The select bits will correspond to the input variables.
+. Ta-da!
+
+=== Read Only Memory
+
+A ROM (Read-Only Memory) is analogous to an array.
+The ROM address is like an array index, and the ROM data for an address is like the value at an index.
+
+=== Truth table to ROM
+
+Treat all input bits in a truth table as a binary number that corresponds to ROM addresses (array indices).
+Treat all output bits in a truth table as a binary number that corresponds to ROM data.
+Effectively, a ROM acts as a lookup array for function implementation.
+
+== January 22: Sequential logic
+
+=== Combinational vs. Sequential logic
+
+At this point, everything we've talked about has concerned *combinational logic.*
+In combinational logic, outputs are functions of inputs.
+In other words, combinational logic has no memory.
+
+Today, we'll talk about *sequential logic.*
+In sequential logic, outputs are functions of inputs and *prior outputs.*
+Put another way, sequential logic is combinational logic + memory.
+
+=== Latches
+
+Latches are a single bit memory device.
+We can construct a latch using two NAND gates or two NOR gates.
+We have two inputs, S' and R', and an output Q.
+These are fed as input to the separate gates, leaving each gate with an empty pin for another input.
+The other input to each gate is the output of the other gate.
+Thus, the gates are cross-connected to each other, so the output is literally a function of inputs and prior outputs.
+
+In a latch, we can describe the behavior using a *characteristic table*, similar to a truth table.
+In a characteristic table, we describe the behavior of the circuit.
+
+(SR)' NAND latch characteristic table
+
+[format="csv",output="header"]
+|===
+S',R',Q
+0,0,Restricted state (here be dragons)
+0,1,Q=1 (Assign Q to 1)
+1,0,Q=0 (Assign Q to 0)
+1,1,No change
+|===
+
+Try it out for yourself.
+
+Latches are so called because they are *level-triggered.*
+Level-triggered means that the level (hi or lo voltage) of the input is what causes the value of Q (the memory) to change.
+
+=== Flip-flops
+
+Flip-flops, like latches, are a single bit memory device.
+Unlike latches, flip-flops are *edge-triggered.*
+Edge-triggered means that the transition from one input to another is what causes the value of the memory to change.
+There are two kinds of edge: rising edge (positive edge) and falling edge (negative edge), corresponding to the transition from low to hi and hi to lo, respectively.
+
+Flip-flops are made from latches, but with extra circuitry to make it edge-triggered.
+The circuitry itself takes advantage of solid-state physics to achieve the desired effect.
+Just as the speed of sound varies based on the medium (e.g., air, water), or the speed of light varies based on the medium (e.g., vacuum, fiber-optics, air), the speed at which electrons flow through a circuit varies based on the medium.
+Electrons flow at nearly the speed of light through good conductors such as copper, but flow slightly slower through semiconductors such as silicon (known as a *gate propagation delay* ).
+
+The expression x'+x is always equal to 1, but the circuit implementing this isn't always equal to 1, because of gate propagation delays.
+
+=== Registers
+
+A register is a multiple-bit memory device composed of multiple flip-flops chained together to store things like integers, characters, and such.
+Code that declares a variable, like `int i = 0`, allocates `i` to a register and sets the value of that register.
+All CPUs have registers in them.
+
+== January 25: State machines
+
+A *finite state machine* consists of a finite number of states (nodes) and transitions (edges) among states.
+The state machine begins at the start state.
+External input or the passage of time triggers transitions.
+State machines may also produce output.
+The input and/or output labels each transition (edge).
+
+image:http://lawrancej.github.io/COMP1200-2016/Lectures/state-machine-legend.svg[State machine legend]
+
+== January 27: State machine example implementation
+
+A state machine can model orthogonal traffic lights at an intersection.
+Since traffic lights take no input (other than the passage of time), the input is omitted from the transition diagram.
+The output corresponds to the color of each of the two orthogonal traffic lights.
+
+image:http://lawrancej.github.io/COMP1200-2016/Lectures/traffic-light.svg[Traffic light state-transition diagram]
+
+We can convert the state diagram into a transition table:
+
+[cols="4",format="csv"]
+|===
+state,next,1,2
+0,1,green,red
+1,2,green,red
+2,3,yellow,red
+3,4,red,green
+4,5,red,green
+5,6,red,green
+6,7,red,yellow
+7,0,green,red
+|===
+
+To implement this into a ROM:
+
+. Use the state as the ROM address.
+. Assign bits to red (`00`), yellow (`01`) and green (`10`).
+The number of bits necessary is the log (base 2) of the number of possibilities.
+. Encode the next state and outputs into a number.
+
+[cols="5",format="csv"]
+|===
+state (ROM address),next,1,2,ROM data
+0,1,10,00,0x18
+1,2,10,00,0x28
+2,3,01,00,0x34
+3,4,00,10,0x42
+4,5,00,10,0x52
+5,6,00,10,0x62
+6,7,00,01,0x71
+7,0,10,00,0x08
+|===
+
+== January 29: State machines
+
+image:http://lawrancej.github.io/COMP1200-2016/Lectures/random-state-machine.svg[Random state machine]
+
+https://docs.google.com/spreadsheets/d/1k3oJ2vz-r8oahjXeXzSUPlxBUk9rlUNBdR2-pGXjyP8/edit?usp=sharing[Spreadsheet] for the state machine above.
+
+== February 1: CPU overview
+
+RAM (Random Access Memory):: The location of programs and/or data.
+ALU (Arithmetic/Logic Unit):: Given two inputs, produce one output based on the opcode
+Register file:: A small array of registers to read/write.
+Control unit:: The underlying state machine that directs traffic among the ALU, register file, and RAM.
+
+https://github.com/lawrancej/COMP1200-2016/blob/master/Circuits/cpu-16bit-isa.adoc[CPU instruction set]
+
+== February 3: Programming the CPU
+
+*Example:* An implementation of factorial.
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+|*Line*
+|*Structured code*
+|*Spaghetti code*
+|*Assembly*
+|*Machine*
+
+|0
+|
+|`int R1 = 0x01;`
+|`MOV R1,0x01`
+|7101
+
+|1
+|`int n = RAM[0x80];`
+|`int R2 = RAM[0x80];`
+|`LOAD R2,0x80`
+|c280
+
+|2
+|`int factorial = 1;`
+|`int R3 = R1+R0;`
+|`ADD R3,R1,R0`
+|0310
+
+|3
+|`while (n > 0) {`
+|`if (R2==0) goto 0x07;`
+|`JZE R2,0x07`
+|8207
+
+|4
+|`factorial *= n;`
+|`R3=R3*R2;`
+|`MUL R3,R3,R2`
+|2332
+
+|5
+|`n--;`
+|`R2=R2-R1;`
+|`SUB R2,R2,R1`
+|1221
+
+|6
+|`}`
+|`if (R0==0) goto 0x03;`
+|`JZE R0, 0x03`
+|8003
+
+|===
+
+Although the example CPU is limited, it is as capable as any other CPU.
+
+. The instruction set (like most CPUs) requires data to reside in registers, including constants.
+That is why we must load 1 into a register first: high-level constructs (such as increment) assume the literal 1.
+It is also why we systematically replace meaningful variable names with registers.
+. Assume that memory address `0x80` has the number we'll use to compute factorial.
+`LOAD` is distinct from `MOV`, because `LOAD` copies data from RAM into a register, whereas `MOV` copies data from the instruction into the register.
+. In this CPU (as in the ARM architecture), register 0 is a constant 0.
+Thus, we can move data from one register to another by adding R0.
+. Structured code is more readable because if the condition is true, we enter the block; otherwise, we jump past the block.
+Spaghetti code (and machine code) is less readable because if the condition is true, we jump to some address.
+Jumping to the next instruction achieves nothing, because the CPU will advance to the next instruction regardless.
+Thus, we must invert the condition to achieve the effect of the structured code.
+. When we reach the end of the loop, we jump back to the beginning.
+
+== February 12: Memory hierarchy, displays
+
+Memory speed and capacity are at odds with each other: fast CPU registers hold bytes, whereas slow hard drives hold terabytes.
+
+* http://blog.codinghorror.com/the-infinite-space-between-words/[Memory hierarchy]
+* https://www.google.com/search?q=a+light+nanosecond&ie=utf-8&oe=utf-8#q=+%28lightyear+%2F+1+year%29+in+feet+per+second[Light travels roughly 1 foot per nanosecond]
+* https://en.wikipedia.org/wiki/Kibibyte[Know your SI prefixes for information]
+* https://www.youtube.com/watch?v=Wiy_eHdj8kg[Hard drive teardown]
+
+Displays are amazing.
+
+* https://www.youtube.com/watch?v=jiejNAUwcQ8[LCD teardown]
+
+High dynamic range displays are amazing-er (and are coming on the market soon)
+
+* https://en.wikipedia.org/wiki/High-dynamic-range_imaging[HDR imaging]
+* http://www.bit-tech.net/hardware/2005/10/04/brightside_hdr_edr/8[Two displays, side by side. Both are showing black. Spot the difference?]
+* http://www.cnet.com/news/what-is-hdr-for-tvs-and-why-should-you-care/[High dynamic range displays]

@@ -1,0 +1,16 @@
+# dot traffic-light.gv -T svg > traffic-light.svg
+digraph finite_state_machine {
+#	rankdir=LR;
+	size="8,5"
+	node [shape = none]; " ";
+	node [shape = circle];
+  " " -> 0;
+  0 -> 1 [ label = "/ green, red" ];
+  1 -> 2 [ label = "/ green, red" ];
+  2 -> 3 [ label = "/ yellow, red" ];
+  3 -> 4 [ label = "/ red, green" ];
+  4 -> 5 [ label = "/ red, green" ];
+  5 -> 6 [ label = "/ red, green" ];
+  6 -> 7 [ label = "/ red, yellow" ];
+  7 -> 0 [ label = "/ green, red" ];
+}
