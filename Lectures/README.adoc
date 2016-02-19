@@ -975,4 +975,7 @@ High dynamic range displays are amazing-er (and are coming on the market soon)
 == February 19: Encodings
 
 * https://en.wikipedia.org/wiki/Prefix_code[Prefix code stuff]
-* https://en.wikipedia.org/wiki/UTF-8[Unicode], http://www.asciitable.com/[ASCII], http://www.asciimation.co.nz/[etc.]
+* http://www.asciitable.com/[ASCII]
+* https://en.wikipedia.org/wiki/UTF-8[Unicode]
+* http://www.asciimation.co.nz/[etc.]
+* https://xiph.org/video/vid1.shtml[Digital media primer for geeks]
