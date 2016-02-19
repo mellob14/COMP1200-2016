@@ -971,3 +971,8 @@ High dynamic range displays are amazing-er (and are coming on the market soon)
 * https://en.wikipedia.org/wiki/High-dynamic-range_imaging[HDR imaging]
 * http://www.bit-tech.net/hardware/2005/10/04/brightside_hdr_edr/8[Two displays, side by side. Both are showing black. Spot the difference?]
 * http://www.cnet.com/news/what-is-hdr-for-tvs-and-why-should-you-care/[High dynamic range displays]
+
+== February 19: Encodings
+
+* https://en.wikipedia.org/wiki/Prefix_code[Prefix code stuff]
+* https://en.wikipedia.org/wiki/UTF-8[Unicode], http://www.asciitable.com/[ASCII], http://www.asciimation.co.nz/[etc.]
