@@ -979,3 +979,10 @@ High dynamic range displays are amazing-er (and are coming on the market soon)
 * https://en.wikipedia.org/wiki/UTF-8[Unicode]
 * http://www.asciimation.co.nz/[etc.]
 * https://xiph.org/video/vid1.shtml[Digital media primer for geeks]
+
+== February 24: CPU stuff
+
+* http://minnie.tuhs.org/Programs/UcodeCPU/index.html[UcodeCPU]
+* http://minnie.tuhs.org/CompArch/Tutes/week03.html[Tutes]
+* http://dl.acm.org/citation.cfm?id=2445196.2445296&coll=DL&dl=ACM&CFID=725866919&CFTOKEN=92187912[Simple CPU]
+* https://github.com/briandef/bf16[Brainfuck]
