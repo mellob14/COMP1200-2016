@@ -229,7 +229,8 @@ curl https://raw.githubusercontent.com/lawrancej/COMP1200Project/master/main.sh 
 . Add your friend(s) SSH urls to git.
 
 ----
-git remote add myFriendBob ssh_url_to_my_friend_bobs_rep_url_dont_type_this_literally
+cd ~/COMP1200Project
+git remote add somebody git@github.com:somebody/COMP1200Project.git
 git fetch --all
 ----
 
