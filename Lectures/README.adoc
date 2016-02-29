@@ -986,3 +986,13 @@ High dynamic range displays are amazing-er (and are coming on the market soon)
 * http://minnie.tuhs.org/CompArch/Tutes/week03.html[Tutes]
 * http://dl.acm.org/citation.cfm?id=2445196.2445296&coll=DL&dl=ACM&CFID=725866919&CFTOKEN=92187912[Simple CPU]
 * https://github.com/briandef/bf16[Brainfuck]
+
+== February 26: Modifying a CPU
+
+Added memory-mapped output to a CPU.
+
+Also: http://www.jakepoz.com/debugging-behind-the-iron-curtain/[Debugging behind the Iron Curtain]
+
+== February 29: Modify a CPU more
+
+Add memory-mapped input to a CPU.
