@@ -265,6 +265,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(960,100)" to="(980,100)"/>
     <wire from="(680,20)" to="(680,130)"/>
     <wire from="(550,290)" to="(570,290)"/>
+    <wire from="(790,100)" to="(790,140)"/>
     <wire from="(750,90)" to="(770,90)"/>
     <wire from="(330,70)" to="(350,70)"/>
     <wire from="(490,150)" to="(510,150)"/>
@@ -510,6 +511,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp loc="(200,160)" name="Decoder"/>
     <comp lib="4" loc="(550,400)" name="Comparator">
       <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(790,140)" name="Tunnel">
+      <a name="label" val="reset"/>
     </comp>
     <comp lib="5" loc="(553,48)" name="Text">
       <a name="text" val="Bus"/>
