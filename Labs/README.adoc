@@ -163,7 +163,7 @@ If not, you goofed up.
 
 [format="csv",options="header"]
 |===
-ROM address,Op3,Op2,Op1,Clock,Cycle,,Reg write,ALU enable,Bus read,Bus write
+ROM address,Op3,Op2,Op1,Cycle,Clock,,Reg write,ALU enable,Bus read,Bus write
 0,0,0,0,0,0,,,,,
 1,0,0,0,0,1,,,,,
 2,0,0,0,1,0,,,,,
@@ -198,4 +198,122 @@ ROM address,Op3,Op2,Op1,Clock,Cycle,,Reg write,ALU enable,Bus read,Bus write
 31,1,1,1,1,1,,,,,
 |===
 
-Save your work in a spreadsheet and commit as usual.
+Save your work in a spreadsheet (and save the new Logisim CPU) and commit and push as usual.
+
+https://github.com/lawrancej/COMP1200-2016/blob/master/Git.adoc[How to submit work]
+
+== Lab 6: Project setup
+
+Setup to duild a CPU in Logisim and test it with machine code.
+
+The CPU should be programmable, but the data and program do not need to share the RAM.
+That is, the program could be in a separate ROM (read only memory) to simplify things.
+
+=== Speed dating
+
+Goal: find a partner or partners.
+
+Ideally, work in pairs.
+Working on this individually is *very* challenging and not recommended.
+Groups of 3 are okay, but larger groups are not recommended.
+
+=== Repository setup
+
+Goal: Set up your repository.
+
+----
+curl https://raw.githubusercontent.com/lawrancej/COMP1200Project/master/main.sh | bash
+----
+
+. Add each of your friend(s) as collaborators to your Github repository.
+. Add your friend(s) SSH urls to git.
+
+----
+cd ~/COMP1200Project
+git remote add somebody git@github.com:somebody/COMP1200Project.git
+git fetch --all
+----
+
+=== Overview
+
+Goal: Decide on the parameters of your http://en.wikipedia.org/wiki/Central_processing_unit[CPU].
+
+You may work on an existing CPU, including the one I supplied, but in that case,
+you need to clearly explain what you did to improve it.
+The best way to do this is to commit the existing CPU in your repository first
+and explain that it is your starting point.
+
+Example CPUs include:
+
+* http://minnie.tuhs.org/Programs/UcodeCPU/index.html[UcodeCPU]
+* http://minnie.tuhs.org/CompArch/Tutes/week03.html[Tutes]
+* http://dl.acm.org/citation.cfm?id=2445196.2445296&coll=DL&dl=ACM&CFID=725866919&CFTOKEN=92187912[Simple CPU]
+* https://github.com/briandef/bf16[Brainfuck]
+
+Answer these questions, but remember, you will need to write a demonstration program for this CPU.
+The easier it is to implement the CPU, the harder it may be to write demonstration code.
+
+==== Architecture
+
+http://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures[What kind of architecture is it?]
+Is this CPU a Harvard architecture or von Neumann architecture?
+
+NOTE: A Harvard architecture CPU (where program is in ROM and data is in RAM) is
+simpler to implement with few (if any) consequences on machine code complexity.
+
+==== Instructions
+
+Decide on an http://en.wikipedia.org/wiki/Instruction_set[instruction set].
+
+Examples:
+
+* https://en.wikipedia.org/wiki/CHIP-8[CHIP-8]
+* https://en.wikipedia.org/wiki/Brainfuck[Brainfuck]
+
+The CPU *must* support at minimum: conditional jumps, arithmetic, logic, and loading and storing data to RAM.
+Examples include: Brainfuck, http://www.bigmessowires.com/nibbler/[Nibbler], 6502, http://jasmin.sourceforge.net/[jvm]
+
+* How many instructions do you plan to implement?
+* What are they? (Keep in mind, some machines only implement a handful of instructions)
+* What is the maximum number of operands an instruction may have? (Usually, this is no more than 3)
+* How many bits will you use to encode each instruction?
+* Are instructions a fixed width? (It is far easier for it to be fixed width, btw)
+
+==== Registers
+
+How wide are the registers? 8 bits? 16 bits? 32 bits?
+
+How many registers do you plan to implement in the register file?
+At a minimum, you will need a register to point to the current instruction (the program counter),
+and a register to store the current instruction.
+You will likely need a register to store the current microcode instruction and program counter.
+In addition, you will need registers to store data.
+
+Machines without a register file exist: they use stacks instead (see http://jasmin.sourceforge.net/about.html[JVM assembly]).
+Obviously, a register is still necessary to keep track of where we are in the stack, but in a "stack machine" the register isn't referenced directly as an operand.
+Instead, push and pop operations implicitly change the stack register.
+
+Supporting multiple registers arguably simplifies machine coding, but large register files are tedious to implement.
+
+==== Hints
+
+Start with some existing CPU and modify it to work better in some meaningful way.
+
+Example improvements:
+
+Squeeze out instructions::
+* Remove some existing instruction to make room for better ones
+
+Modify instructions::
+* Replace LOAD Rd with LOAD Rd, Ra: Rd = RAM[Ra]
+* Split comparison from jump:
+** CMPEQ Ra Rb (set a 1-bit test flag register to Ra == Rb)
+** CMPLT Ra Rb (set a 1-bit test flag register to Ra < Rb)
+** JMP imm (jump to immediate if test flag is set)
+
+Memory-mapped I/O::
+* Loading from a special memory address reads from the keyboard buffer
+* Storing to a special memory address writes to the tty (screen)
+
+Fix reset::
+* Allow the reset button to also reset the phase of the CPU

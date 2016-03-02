@@ -971,3 +971,28 @@ High dynamic range displays are amazing-er (and are coming on the market soon)
 * https://en.wikipedia.org/wiki/High-dynamic-range_imaging[HDR imaging]
 * http://www.bit-tech.net/hardware/2005/10/04/brightside_hdr_edr/8[Two displays, side by side. Both are showing black. Spot the difference?]
 * http://www.cnet.com/news/what-is-hdr-for-tvs-and-why-should-you-care/[High dynamic range displays]
+
+== February 19: Encodings
+
+* https://en.wikipedia.org/wiki/Prefix_code[Prefix code stuff]
+* http://www.asciitable.com/[ASCII]
+* https://en.wikipedia.org/wiki/UTF-8[Unicode]
+* http://www.asciimation.co.nz/[etc.]
+* https://xiph.org/video/vid1.shtml[Digital media primer for geeks]
+
+== February 24: CPU stuff
+
+* http://minnie.tuhs.org/Programs/UcodeCPU/index.html[UcodeCPU]
+* http://minnie.tuhs.org/CompArch/Tutes/week03.html[Tutes]
+* http://dl.acm.org/citation.cfm?id=2445196.2445296&coll=DL&dl=ACM&CFID=725866919&CFTOKEN=92187912[Simple CPU]
+* https://github.com/briandef/bf16[Brainfuck]
+
+== February 26: Modifying a CPU
+
+Added memory-mapped output to a CPU.
+
+Also: http://www.jakepoz.com/debugging-behind-the-iron-curtain/[Debugging behind the Iron Curtain]
+
+== February 29: Modify a CPU more
+
+Add memory-mapped input to a CPU.
