@@ -43,6 +43,7 @@ February 15:: President's day (observed)
 February 17:: Get midterms back.
 February 18:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 5: More Logic to ROM]
 February 19:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Encodings]
+February 22:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Lab 3 hints]
 February 24:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[CPU stuff]
 February 25:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 6: Group project setup]
 February 26:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Memory mapped output]
