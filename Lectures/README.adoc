@@ -996,3 +996,18 @@ Also: http://www.jakepoz.com/debugging-behind-the-iron-curtain/[Debugging behind
 == February 29: Modify a CPU more
 
 Add memory-mapped input to a CPU.
+
+== March 4: A need for speed
+
+Speed
+
+* https://en.wikipedia.org/wiki/Flynn's_taxonomy
+* https://en.wikipedia.org/wiki/Amdahl's_law
+* https://en.wikipedia.org/wiki/Moore's_law
+
+Bag of tricks to reduce latency
+
+* https://en.wikipedia.org/wiki/Instruction_pipeline
+* https://en.wikipedia.org/wiki/Branch_predictor
+* https://en.wikipedia.org/wiki/Speculative_execution
+* https://en.wikipedia.org/wiki/Out-of-order_execution

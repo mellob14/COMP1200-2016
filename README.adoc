@@ -49,3 +49,5 @@ February 25:: https://github.com/lawrancej/COMP1200-2016/blob/master/Labs/[Lab 6
 February 26:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Memory mapped output]
 February 29:: https://github.com/lawrancej/COMP1200-2016/blob/master/Lectures/[Memory mapped input (broken)]
 March 2:: Recursion, stack frames, Postfix (RPN)
+March 3:: Group project: CPU research
+March 4:: Speed
