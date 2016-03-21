@@ -1011,3 +1011,13 @@ Bag of tricks to reduce latency
 * https://en.wikipedia.org/wiki/Branch_predictor
 * https://en.wikipedia.org/wiki/Speculative_execution
 * https://en.wikipedia.org/wiki/Out-of-order_execution
+
+== March 21: Virtual machines
+
+If you've ever used Java, JavaScript, VirtualBox, VMWare, or any emulator,
+you've used a virtual machine.
+A virtual machine implements an instruction set in software.
+In a very real sense, hardware is just "petrified" software.
+
+Peruse `Java/src/main/java/CPU.java` for a working Java implementation of the CPU
+given in class.
