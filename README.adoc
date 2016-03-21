@@ -54,4 +54,4 @@ March 4:: Speed
 March 14:: https://github.com/fulldecent/system-bus-radio[Radio via system bus?!? Crazy]
 March 21:: Virtual machines
 April 11:: Last day to present before final presentations start
-Final presentation:: Unknown (Sometime between 14-Apr-2016 to 20-Apr-2016)
+Final presentation:: April 15 from 10:15am-12:15pm at Wentworth 307
