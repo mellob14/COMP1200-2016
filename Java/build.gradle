@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "CPU"
+applicationName = 'Application'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Local dependencies convention: ./libs/*.jar
+    fileTree(dir: 'libs', include: '*.jar')
+    testCompile 'junit:junit:4.11'
+}
